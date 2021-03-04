@@ -12,11 +12,11 @@ router.post('/registro-canciones', (req, res) => {
         duracion: cancion.duracion,
         estado: 'Activo'
     });
-    cancion.artista.forEach(artista => {
-        nueva_cancion.artista.push(artista._id);
+    cancion.artista.forEach(art => {
+        nueva_cancion.artista.push(art._id);
     });
-    cancion.album.forEach(album => {
-        nueva_cancion.album.push(album._id);
+    cancion.album.forEach(alb => {
+        nueva_cancion.album.push(alb._id);
     });
     nueva_cancion.save((err, cancion_db) => {
         if (err) {
